@@ -6,6 +6,7 @@ public class Player1_KeyboardMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected float player_speed;
 
     void Start()
     {
@@ -15,22 +16,15 @@ public class Player1_KeyboardMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 direction = new Vector2(0, 0);
         if (Input.GetKey(KeyCode.W))
-        {
-            rb.velocity = new Vector2(0, 1);
-        }
-
+            direction += new Vector2(0, player_speed);
         if (Input.GetKey(KeyCode.S))
-        {
-            rb.velocity = new Vector2(0, -1);
-        }
+            direction += new Vector2(0, -player_speed);
         if (Input.GetKey(KeyCode.D))
-        {
-            rb.velocity = new Vector2(1, 0);
-        }
+            direction += new Vector2(player_speed, 0);
         if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector2(-1, 0);
-        }
+            direction += new Vector2(-player_speed, 0);
+        rb.velocity = direction;
     }
 }
