@@ -12,6 +12,9 @@ public class HealthBarManager : MonoBehaviour
     public Health playerOne;
     public Health playerTwo;
 
+    public float lerpSpeed;
+    float currentRatio = 1;
+
     private void Update()
     {
         if (playerOne != null)
@@ -28,8 +31,9 @@ public class HealthBarManager : MonoBehaviour
     void UpdateBar (Image bar, Health player)
     {
         float ratio = player.GetHealthRatio();
-        //Mathf.Lerp()
-        bar.rectTransform.localScale = new Vector2(ratio, bar.rectTransform.localScale.y);
+        ratio = Mathf.Clamp(ratio, 0, 1);
+        currentRatio = Mathf.Lerp(currentRatio, ratio, Time.deltaTime * lerpSpeed);
+        bar.rectTransform.localScale = new Vector2(currentRatio, bar.rectTransform.localScale.y);
     }
 
 }
