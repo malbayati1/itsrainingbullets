@@ -376,6 +376,7 @@ MonoBehaviour:
   playerTwoBar: {fileID: 2065289623}
   playerOne: {fileID: 1819387004}
   playerTwo: {fileID: 0}
+  lerpSpeed: 4
 --- !u!4 &1168265809
 Transform:
   m_ObjectHideFlags: 0
@@ -734,7 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33748665, g: 0.9056604, b: 0.39848137, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -781,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33748665, g: 0.9056604, b: 0.39848137, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
