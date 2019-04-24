@@ -32,7 +32,7 @@ public class Player2_JoystickShooting : MonoBehaviour
         if (DoShoot && FrameCount % frames_between_shot == 0)
         {
             Vector2 firing_vector = new Vector2(directionX, directionY);
-            Player2_Projectile new_projectile = Instantiate(projectile, firing_vector + new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            Player2_Projectile new_projectile = Instantiate(projectile, transform.position, Quaternion.identity);
         }
         DoShoot = false;
     }

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FaceMouse : MonoBehaviour
+public class Player1_Rotation : MonoBehaviour
 {
-
     // Update is called once per frame
     void Update()
     {
@@ -13,7 +12,7 @@ public class FaceMouse : MonoBehaviour
 
     void faceMouse()
     {
-        Vector3 mousePosition = Input.mousePosition;    
+        Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         Vector2 direction = new Vector2(
@@ -21,6 +20,6 @@ public class FaceMouse : MonoBehaviour
             mousePosition.y - transform.position.y
             );
 
-        transform.up = direction; 
+        transform.up = direction;
     }
 }
