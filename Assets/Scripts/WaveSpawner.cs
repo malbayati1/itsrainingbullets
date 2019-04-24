@@ -44,6 +44,7 @@ public class WaveSpawner : MonoBehaviour
             if(!EnemyIsAlive())
             {
                 WaveCompleted();
+                waveCountdown = timeBetweenWaves;
             }
             else
             {
