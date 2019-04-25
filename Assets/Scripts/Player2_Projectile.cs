@@ -14,7 +14,7 @@ public class Player2_Projectile : MonoBehaviour
         GameObject player = GameObject.Find("Player2");
         Vector3 player_velocity = player.GetComponent<Rigidbody2D>().velocity;
         Vector3 direction = player.transform.up;
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = (direction * projectileVelocity) + player_velocity/4;
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = (direction * projectileVelocity) + player_velocity/10;
     }
 
     private void FixedUpdate()

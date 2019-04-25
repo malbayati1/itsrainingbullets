@@ -51,8 +51,12 @@ public class Enemy : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Missile"))
         {
-            health = health - 1;
+            health = health - 2; //Temporary, once explosion is implemented, explosion will deal damage.
+                                 //Plan to replace this code block with explosion damage implementation
+                                 //Player1 projectile will handle instantiating an explosion on collision, missile itself deals no damage.
             Destroy(col.gameObject);
+            Debug.Log("Small Explosion");
+            //Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
             Debug.Log(health);
             if(health <= 0)
             {
