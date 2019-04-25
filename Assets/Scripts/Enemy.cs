@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         target = FindClosest();
-        target_vector = (target.position - transform.position)* response_multiplier;
+        target_vector = (target.position - transform.position).normalized * response_multiplier;
         m_rigidbody2D.AddForce(target_vector);
         m_rigidbody2D.velocity.Normalize();
         m_rigidbody2D.velocity = m_rigidbody2D.velocity * movementSpeed;
