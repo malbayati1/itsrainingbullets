@@ -6,43 +6,52 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - Missile
+  - Explosion_Small
+  - Explosion_Large
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  - Bullet
+  - Missile
+  - Player1
+  - Player2
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: enemy
-    uniqueID: 997691015
+  - name: Projectiles
+    uniqueID: 3258281243
+    locked: 0
+  - name: Player
+    uniqueID: 3359986151
+    locked: 0
+  - name: Enemy
+    uniqueID: 1695374901
     locked: 0

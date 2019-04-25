@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4639259601983083365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4639259601983083371}
+  - component: {fileID: 4639259601983083370}
+  m_Layer: 0
+  m_Name: Wave Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4639259601983083371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639259601983083365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1418785, y: 0.48101828, z: -1.1019862}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4639259601983083370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639259601983083365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b274d93fd5af71842b80ba34ef8f1b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  waves:
+  - name: 
+    enemies:
+    - {fileID: 4452423606085999157, guid: b7cfce7220552fa4ba04636b4a5a4620, type: 3}
+    count: 5
+    rate: 1
+  - name: 
+    enemies:
+    - {fileID: 4452423606085999157, guid: b7cfce7220552fa4ba04636b4a5a4620, type: 3}
+    - {fileID: 2892529591229727194, guid: 756e6a2234b2afe408527e6ba4ab5a10, type: 3}
+    count: 10
+    rate: 1
+  - name: 
+    enemies:
+    - {fileID: 4452423606085999157, guid: b7cfce7220552fa4ba04636b4a5a4620, type: 3}
+    - {fileID: 2892529591229727194, guid: 756e6a2234b2afe408527e6ba4ab5a10, type: 3}
+    - {fileID: 7009910861040114793, guid: 753e194271e9a834485ae675feedfc33, type: 3}
+    count: 15
+    rate: 1
+  timeBetweenWaves: 0.5
+  waveCountdown: 0

@@ -2,27 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Explosion_Large : MonoBehaviour
 {
-
-    public float bulletSpeed;
-
-
+    [SerializeField] protected float explosion_life;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(GetComponent<Transform>().gameObject, explosion_life);
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveBullet();
-    }
-
-
-    void MoveBullet ()
-    {
-        transform.Translate(new Vector3(0, bulletSpeed * Time.deltaTime, 0));
+        
     }
 }

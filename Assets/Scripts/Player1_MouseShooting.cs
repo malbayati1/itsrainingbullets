@@ -9,7 +9,7 @@ public class Player1_MouseShooting : MonoBehaviour
     private int FrameCount;
     [SerializeField] protected int frames_between_shot;
     private bool DoShoot = false;
-    [SerializeField] protected GameObject projectile;
+    [SerializeField] protected Player1_Projectile projectile;
     const KeyCode FIREBUTTON = KeyCode.Mouse0;
     //SerializeField] protected GameObject player_location;
 
@@ -23,15 +23,13 @@ public class Player1_MouseShooting : MonoBehaviour
     void FixedUpdate()
     {
         FrameCount++;
-        float directionX = Input.GetAxis("RightThumbstickX");
-        float directionY = Input.GetAxis("RightThumbstickY");
         if (Input.GetKey(FIREBUTTON))
         {
             DoShoot = true;
         }
         if (DoShoot && FrameCount % frames_between_shot == 0)
         {
-            Instantiate(projectile, transform.position + (transform.up * 1), Quaternion.Euler(CalculateRotation()));
+            Player1_Projectile new_projectile = Instantiate(projectile, transform.position, Quaternion.Euler(CalculateRotation()));
         }
         DoShoot = false;
     }
@@ -47,4 +45,6 @@ public class Player1_MouseShooting : MonoBehaviour
 
         return bulletVector;
     }
+
+    
 }

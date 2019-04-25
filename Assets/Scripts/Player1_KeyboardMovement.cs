@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player1_KeyboardMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     [SerializeField] protected float player_speed;
 
     void Start()

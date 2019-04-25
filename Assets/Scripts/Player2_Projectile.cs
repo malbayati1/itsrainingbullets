@@ -12,10 +12,9 @@ public class Player2_Projectile : MonoBehaviour
     {
         Destroy(GetComponent<Transform>().gameObject, projectileLife);
         GameObject player = GameObject.Find("Player2");
-        Vector3 player_location = player.transform.position;
         Vector3 player_velocity = player.GetComponent<Rigidbody2D>().velocity;
-        Vector3 direction = transform.position - player_location;
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = (direction * projectileVelocity)+player_velocity;
+        Vector3 direction = player.transform.up;
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = (direction * projectileVelocity) + player_velocity/10;
     }
 
     private void FixedUpdate()
