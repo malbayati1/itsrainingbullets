@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 0
   bullet: {fileID: 1693764317977409611, guid: 2d9e6f35b166dc64bba8844fb82638c5, type: 3}
-  fireDelay: 0
+  fireDelay: 0.1
 --- !u!50 &987484764
 Rigidbody2D:
   serializedVersion: 4
