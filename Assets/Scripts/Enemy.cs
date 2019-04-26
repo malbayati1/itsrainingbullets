@@ -35,9 +35,15 @@ public class Enemy : MonoBehaviour
 
     Transform FindClosest()
     {
-        Transform p1 = GameObject.Find("Player1").transform;
-        Transform p2 = GameObject.Find("Player2").transform;
-        
+        Transform p1 = null;
+        Transform p2 = null;
+
+        if (GameObject.Find("Player1") != null) p1 = GameObject.Find("Player1").transform;
+        if (GameObject.Find("Player2") != null) p2 = GameObject.Find("Player2").transform;
+
+        if (p1 == null) { return p2; }
+        else if (p2 == null) { return p1; }
+
         if ((p1.position - this.transform.position).magnitude < (p2.position - this.transform.position).magnitude)
         {
             return p1;
@@ -47,6 +53,8 @@ public class Enemy : MonoBehaviour
             return p2;
         }
     }
+
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Missile"))
