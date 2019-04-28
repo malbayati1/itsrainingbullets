@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3632124551366271644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.79588664, y: 2.02, z: -0.30227292}
-  m_LocalScale: {x: 0.125, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.33, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,11 +67,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79cb94b5b3470e4fbdaec1a125d9083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileVelocity: 10
+  projectileVelocity: 15
   projectileLife: 5
-  explosion1: {fileID: 5087234822305032528, guid: a992c9d6790b403439776d22149f4c55,
+  explosion1: {fileID: -3943156459788413793, guid: a992c9d6790b403439776d22149f4c55,
     type: 3}
-  explosion2: {fileID: 3345194864938621833, guid: a040d5bfa849886429fb955811a69800,
+  explosion2: {fileID: 631879888913972338, guid: a040d5bfa849886429fb955811a69800,
+    type: 3}
+  explosion3: {fileID: -5397556415140677885, guid: 3c268b3d47c75ee4aa6d5b34a6d5d48c,
     type: 3}
 --- !u!212 &8116681463624115382
 SpriteRenderer:

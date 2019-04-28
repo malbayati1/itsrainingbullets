@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66823c6b5329669419bb0b16a0d929f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames_between_shot: 20
+  frames_between_shot: 30
   projectile: {fileID: 3058850038747223303, guid: e8f4cd087950c7547ba6af1269509b3d,
     type: 3}
 --- !u!114 &3104817793713394054

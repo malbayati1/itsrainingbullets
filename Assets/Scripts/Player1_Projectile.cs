@@ -6,8 +6,9 @@ public class Player1_Projectile : MonoBehaviour
 {
     [SerializeField] protected float projectileVelocity;
     [SerializeField] protected float projectileLife;
-    [SerializeField] protected Explosion_Small explosion1;
-    [SerializeField] protected Explosion_Large explosion2;
+    [SerializeField] protected Explosion explosion1;
+    [SerializeField] protected Explosion explosion2;
+    [SerializeField] protected Explosion explosion3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +27,24 @@ public class Player1_Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Enemy")) //Small explosion
+        if (col.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
             Debug.Log("Small Explosion");
-            Instantiate(explosion1, col.gameObject.transform.position, Quaternion.identity);
+            Vector3 offset_position = (transform.position + col.transform.position) / 2;
+            Instantiate(explosion1, offset_position, Quaternion.identity);
         }
-        if (col.gameObject.CompareTag("Bullet")) //Large explosion
+        if (col.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
             Debug.Log("Large Explosion");
-            Instantiate(explosion2, col.gameObject.transform.position, Quaternion.identity);
+            Instantiate(explosion2, transform.position, Quaternion.identity);
+        }
+        if (col.gameObject.CompareTag("Explosion_Large"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Triggered Explsion");
+            Instantiate(explosion3, transform.position, Quaternion.identity);
         }
     }
 }

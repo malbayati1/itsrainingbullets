@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8238434851753957723}
-  - component: {fileID: 5087234822305032528}
+  - component: {fileID: -3943156459788413793}
   - component: {fileID: 5484008318204960923}
   - component: {fileID: 763374381020644190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Explosion_Small
   m_TagString: Explosion_Small
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5087234822305032528
+--- !u!114 &-3943156459788413793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6527089990676852459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad23c3b9b62ade4d939b0ecc9f6c5b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e0fc42c6a0645049951c46e96e1e313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_life: 1
+  explosion_life: 2
+  explosion_growth: 5
 --- !u!212 &5484008318204960923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -80,18 +81,18 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1036686053
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 0.5882353, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &763374381020644190
@@ -109,4 +110,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1

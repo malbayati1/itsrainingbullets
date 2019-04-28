@@ -57,16 +57,24 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Missile"))
+        if (col.gameObject.CompareTag("Explosion_Small"))
         {
-            health = health - 2; //Temporary, once explosion is implemented, explosion will deal damage.
-                                 //Plan to replace this code block with explosion damage implementation
-                                 //Player1 projectile will handle instantiating an explosion on collision, missile itself deals no damage.
-            Destroy(col.gameObject);
-            Debug.Log("Small Explosion");
-            //Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
+            health = health - 2;
+            Vector2 force_vector = transform.position - col.transform.position;
+            m_rigidbody2D.AddForce(force_vector * 5,ForceMode2D.Impulse);
             Debug.Log(health);
             if(health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (col.gameObject.CompareTag("Explosion_Large"))
+        {
+            health = health - 3;
+            Vector2 force_vector = transform.position - col.transform.position;
+            m_rigidbody2D.AddForce(force_vector * 15, ForceMode2D.Impulse);
+            Debug.Log(health);
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }
