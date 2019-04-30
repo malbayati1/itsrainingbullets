@@ -27,7 +27,7 @@ public class Player1_Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
             Debug.Log("Small Explosion");
