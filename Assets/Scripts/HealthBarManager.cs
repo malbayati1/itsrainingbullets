@@ -15,16 +15,31 @@ public class HealthBarManager : MonoBehaviour
     public float lerpSpeed;
     float currentRatio = 1;
 
+
+    private void Start()
+    {
+        if (!playerOne) { playerOne = GameObject.Find("Player1").GetComponent<Health>(); }
+        if (!playerTwo) { playerTwo = GameObject.Find("Player2").GetComponent<Health>(); }
+    }
+
     private void Update()
     {
         if (playerOne != null)
         {
             UpdateBar(playerOneBar, playerOne);
+        } 
+        else
+        {
+            playerOneBar.rectTransform.localScale = new Vector2(0, playerOneBar.rectTransform.localScale.y);
         }
 
         if (playerTwo != null)
         {
             UpdateBar(playerTwoBar, playerTwo);
+        }
+        else
+        {
+            playerTwoBar.rectTransform.localScale = new Vector2(0, playerTwoBar.rectTransform.localScale.y);
         }
     }
 
