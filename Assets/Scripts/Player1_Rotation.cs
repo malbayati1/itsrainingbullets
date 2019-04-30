@@ -12,14 +12,16 @@ public class Player1_Rotation : MonoBehaviour
 
     void faceMouse()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        if (Time.timeScale == 1f){
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Vector2 direction = new Vector2(
-            mousePosition.x - transform.position.x,
-            mousePosition.y - transform.position.y
-            );
+            Vector2 direction = new Vector2(
+                mousePosition.x - transform.position.x,
+                mousePosition.y - transform.position.y
+                );
 
-        transform.up = direction;
+            transform.up = direction;
+        }
     }
 }
