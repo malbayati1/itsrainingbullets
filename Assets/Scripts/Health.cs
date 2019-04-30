@@ -13,4 +13,18 @@ public class Health : MonoBehaviour
         return ((float)health / (float)maxHealth);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            health -= 2;
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health -= 1;
+        }
+    }
 }

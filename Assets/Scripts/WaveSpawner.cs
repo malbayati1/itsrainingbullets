@@ -115,8 +115,10 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        float height = cam.orthographicSize + 2;
-        float width = cam.orthographicSize * cam.aspect + 2;
+        //float height = cam.orthographicSize + 2;
+        //float width = cam.orthographicSize * cam.aspect + 2;
+        float height = cam.orthographicSize; //Spawns within camera
+        float width = cam.orthographicSize * cam.aspect;
         Instantiate(_enemy, new Vector3(Random.Range(-width,width), Random.Range(-height, height), 0), Quaternion.identity);
         Debug.Log("Spawning Enemy: " + _enemy.name);
     }
