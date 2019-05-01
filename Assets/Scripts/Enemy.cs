@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         target = FindClosest();
         target_vector = (target.position - transform.position).normalized * response_multiplier;
@@ -90,5 +90,10 @@ public class Enemy : MonoBehaviour
             }
         }
 
+    }
+
+    public Vector2 getTargetVector()
+    {
+        return target_vector;
     }
 }
