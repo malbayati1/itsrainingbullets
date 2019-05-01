@@ -7,40 +7,45 @@ public class EnemyShooting : MonoBehaviour
     private Enemy self;
     private bool reloaded;
     private float timer;
+    public Vector2 targetPosition;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float fireRatePerFrame;
-    [SerializeField] int bulletSpeed;
+    [SerializeField] private float fireRate;
+    [SerializeField] private float nextFire;
 
     // Start is called before the first frame update
-    private Vector2 targetPosition;
+    
     void Start()
     {
+        fireRate = 1f;
+        nextFire = Time.time;
         self = this.GetComponent<Enemy>();
-        reloaded = true;
-        timer = 0;
+        targetPosition = self.getTargetVector();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(reloaded == true)
-        {
-            targetPosition = this.GetComponent<Enemy>().getTargetVector();
-            Instantiate(bullet, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-            reloaded = false;
-        }
-        else if(timer >= fireRatePerFrame)
-        {
-            timer = 0;
-            reloaded = true;
-        }
-
-        timer += fireRatePerFrame * Time.deltaTime;
+        checkIfTimeToFire();
       
     }
 
-    public int getSpeed()
+    void checkIfTimeToFire()
     {
-        return bulletSpeed;
+        if(Time.time > nextFire)
+        {
+            Instantiate(bullet, transform.position, Quaternion.Euler(CalculateRotation()), this.transform);
+            nextFire = Time.time + fireRate;
+        }
     }
+    private Vector3 CalculateRotation()
+    {
+        Vector3 enemyPos = self.transform.position;
+        Vector3 difference = (Vector3)targetPosition - enemyPos;
+        float bulletAng = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        Vector3 bulletVector = new Vector3(0, 0, bulletAng - 90);
+
+        return bulletVector;
+    }
+
+    
 }

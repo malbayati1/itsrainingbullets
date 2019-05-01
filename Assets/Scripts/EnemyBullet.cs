@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private EnemyShooting shooter;
-    private int speed;
+    [SerializeField] protected float bulletLife = 3f;
+    private Vector2 target;
+    private Rigidbody2D rb;
+    private float moveSpeed = 5f;
+    Vector2 moveDirection;
 
     // Start is called before the first frame update
     void Start()
     {
-        shooter = this.GetComponent<EnemyShooting>();
-        speed = shooter.getSpeed();
-    }
+        Destroy(GetComponent<Transform>().gameObject, bulletLife);
+        target = GetComponentInParent<EnemyShooting>().targetPosition;
+        rb = GetComponent<Rigidbody2D>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        moveDirection = (target - (Vector2)transform.position).normalized * moveSpeed;
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+
+
     }
+   
 }
