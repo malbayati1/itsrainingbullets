@@ -79,6 +79,17 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (col.gameObject.CompareTag("Explosion_Triggered"))
+        {
+            health = health - 2;
+            Vector2 force_vector = transform.position - col.transform.position;
+            m_rigidbody2D.AddForce(force_vector * 10, ForceMode2D.Impulse);
+            Debug.Log(health);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         if (col.gameObject.CompareTag("Bullet"))
         {
             health = health - 1;

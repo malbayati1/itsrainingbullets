@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
-  response_multiplier: 5
+  response_multiplier: 10
   health: 5
 --- !u!114 &3463367781826729662
 MonoBehaviour:
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1590499392211359326, guid: 376f38e1e1da57d4e9c2890923848ef9, type: 3}
   fireRatePerFrame: 30
+  bulletSpeed: 0
 --- !u!50 &-9023357103955255641
 Rigidbody2D:
   serializedVersion: 4
