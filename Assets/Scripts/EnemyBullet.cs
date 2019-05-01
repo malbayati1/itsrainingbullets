@@ -20,7 +20,12 @@ public class EnemyBullet : MonoBehaviour
         moveDirection = (target - (Vector2)transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
 
-
+        
     }
-   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
 }
