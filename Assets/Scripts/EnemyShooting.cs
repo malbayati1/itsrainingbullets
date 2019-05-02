@@ -9,8 +9,8 @@ public class EnemyShooting : MonoBehaviour
     private float timer;
     public Vector2 targetPosition;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float fireRate;
-    [SerializeField] private float nextFire;
+     private float fireRate;
+     private float nextFire;
 
     // Start is called before the first frame update
     

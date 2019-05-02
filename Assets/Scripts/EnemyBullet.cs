@@ -25,7 +25,15 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player")) 
+        {
+            Debug.Log("Hit a player");
+            collision.GetComponent<Health>().health -= 10;
+            Destroy(gameObject);
+        } else if (collision.CompareTag("Missile"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
