@@ -25,12 +25,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //target = FindClosest();
+        //target_vector = (target.position - transform.position).normalized * response_multiplier;
+        //m_rigidbody2D.AddForce(target_vector);
+        //m_rigidbody2D.velocity.Normalize();
+        //m_rigidbody2D.velocity = m_rigidbody2D.velocity * movementSpeed;
+
         target = FindClosest();
-        target_vector = (target.position - transform.position).normalized * response_multiplier;
-        m_rigidbody2D.AddForce(target_vector);
-        m_rigidbody2D.velocity.Normalize();
-        m_rigidbody2D.velocity = m_rigidbody2D.velocity * movementSpeed;
-        //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        target_vector = (target.position - transform.position).normalized;
+        m_rigidbody2D.velocity = Vector3.Lerp(m_rigidbody2D.velocity, target_vector * movementSpeed, response_multiplier * Time.deltaTime);
+
     }
 
     Transform FindClosest()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5104639160641453953}
   - component: {fileID: 7098600224863799466}
   - component: {fileID: 56479221238358294}
+  - component: {fileID: -6311331543798287309}
   - component: {fileID: 2294632772726166163}
   m_Layer: 0
   m_Name: Enemy 3
@@ -129,6 +130,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6311331543798287309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599138511117817050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7bf9b0887144c42b5b1beda030acb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2294632772726166163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88edb205610dac446aaf2ba8db1d73b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.7
-  response_multiplier: 50
+  movementSpeed: 7
+  response_multiplier: 3
   health: 5

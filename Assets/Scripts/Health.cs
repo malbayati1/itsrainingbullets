@@ -29,25 +29,24 @@ public class Health : MonoBehaviour
             health = Mathf.Clamp(health - 2, 0, maxHealth);
             Vector2 force_vector = transform.position - collision.transform.position;
             GetComponent<Rigidbody2D>().AddForce(force_vector * 5, ForceMode2D.Impulse);
-            Debug.Log("exploded");
         }
         if (collision.gameObject.CompareTag("Explosion_Triggered"))
         {
             health = Mathf.Clamp(health - 2, 0, maxHealth);
             Vector2 force_vector = transform.position - collision.transform.position;
             GetComponent<Rigidbody2D>().AddForce(force_vector * 10, ForceMode2D.Impulse);
-            Debug.Log("exploded");
         }
         if (collision.gameObject.CompareTag("Explosion_Large"))
         {
             health = Mathf.Clamp(health - 3, 0, maxHealth);
             Vector2 force_vector = transform.position - collision.transform.position;
             GetComponent<Rigidbody2D>().AddForce(force_vector * 15, ForceMode2D.Impulse);
-            Debug.Log("exploded");
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            health = Mathf.Clamp(health - 3, 0, maxHealth);
+            health = Mathf.Clamp(health - 1, 0, maxHealth);
+            Vector2 force_vector = transform.position - collision.transform.position;
+            GetComponent<Rigidbody2D>().AddForce(force_vector * 3, ForceMode2D.Impulse);
             Destroy(collision.gameObject);
         }
     }

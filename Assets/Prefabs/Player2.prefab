@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_speed: 5
+  response_multiplier: 2
 --- !u!114 &1624146348021815917
 MonoBehaviour:
   m_ObjectHideFlags: 0
