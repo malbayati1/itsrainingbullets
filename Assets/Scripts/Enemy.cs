@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (col.gameObject.CompareTag("Explosion_Large"))
+        else if (col.gameObject.CompareTag("Explosion_Large"))
         {
             health = health - 3;
             Vector2 force_vector = transform.position - col.transform.position;
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (col.gameObject.CompareTag("Explosion_Triggered"))
+        else if (col.gameObject.CompareTag("Explosion_Triggered"))
         {
             health = health - 2;
             Vector2 force_vector = transform.position - col.transform.position;
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (col.gameObject.CompareTag("Bullet"))
+        else if (col.gameObject.CompareTag("Bullet"))
         {
             health = health - 1;
             Destroy(col.gameObject);

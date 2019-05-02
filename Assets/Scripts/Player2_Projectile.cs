@@ -5,12 +5,10 @@ using UnityEngine;
 public class Player2_Projectile : MonoBehaviour
 {
     [SerializeField] protected float projectileVelocity;
-    [SerializeField] protected float projectileLife;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(GetComponent<Transform>().gameObject, projectileLife);
         GameObject player = GameObject.Find("Player2");
         Vector3 player_velocity = player.GetComponent<Rigidbody2D>().velocity;
         Vector3 direction = player.transform.up;
@@ -20,5 +18,13 @@ public class Player2_Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Barrier"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

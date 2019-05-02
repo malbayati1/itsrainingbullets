@@ -8,7 +8,7 @@ public class EnemyShooting : MonoBehaviour
     private bool reloaded;
     private float timer;
     public Vector2 targetPosition;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private EnemyBullet bullet;
      private float fireRate;
      private float nextFire;
 
@@ -33,7 +33,7 @@ public class EnemyShooting : MonoBehaviour
     {
         if(Time.time > nextFire)
         {
-            Instantiate(bullet, transform.position, Quaternion.Euler(CalculateRotation()), this.transform);
+            EnemyBullet new_bullet = Instantiate(bullet, transform.position, Quaternion.Euler(CalculateRotation()));
             nextFire = Time.time + fireRate;
         }
     }

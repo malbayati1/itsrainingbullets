@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4452423606085999157}
   - component: {fileID: 1826400357890059540}
   - component: {fileID: 1697175810350643988}
+  - component: {fileID: 8090368316422682819}
   - component: {fileID: 3463367781826729662}
   - component: {fileID: -9023357103955255641}
   - component: {fileID: -4875639120911779359}
@@ -95,9 +96,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88edb205610dac446aaf2ba8db1d73b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  response_multiplier: 10
+  movementSpeed: 0.85
+  response_multiplier: 15
   health: 5
+--- !u!114 &8090368316422682819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276049672855513348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7bf9b0887144c42b5b1beda030acb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3463367781826729662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,9 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfabeb9acff16a48a0e1fd0dd39c7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1590499392211359326, guid: 376f38e1e1da57d4e9c2890923848ef9, type: 3}
-  fireRatePerFrame: 30
-  bulletSpeed: 0
+  targetPosition: {x: 0, y: 0}
+  bullet: {fileID: 7413068444526809505, guid: 376f38e1e1da57d4e9c2890923848ef9, type: 3}
 --- !u!50 &-9023357103955255641
 Rigidbody2D:
   serializedVersion: 4

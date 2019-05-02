@@ -10,6 +10,7 @@ TagManager:
   - Explosion_Small
   - Explosion_Large
   - Explosion_Triggered
+  - Barrier
   layers:
   - Default
   - TransparentFX
