@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3632124551366271644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8761, y: 1.8172, z: -0.30227292}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVelocity: 15
-  projectileLife: 5
   explosion1: {fileID: -3943156459788413793, guid: a992c9d6790b403439776d22149f4c55,
     type: 3}
   explosion2: {fileID: 631879888913972338, guid: a040d5bfa849886429fb955811a69800,
@@ -112,8 +111,8 @@ SpriteRenderer:
   m_SortingLayerID: -1036686053
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8746f45da6fc18c4fb08de493f168f6a, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c72e9d5ac2405304d9f8ad08993c5734, type: 3}
+  m_Color: {r: 0.99215686, g: 0.99215686, b: 0.99215686, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
