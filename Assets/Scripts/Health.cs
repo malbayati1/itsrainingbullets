@@ -49,6 +49,12 @@ public class Health : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(force_vector * 3, ForceMode2D.Impulse);
             Destroy(collision.gameObject);
         }
+
+
+        if (health <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
